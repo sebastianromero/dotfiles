@@ -1,0 +1,40 @@
+# Define ruta base para archivos de plugins
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
+
+# Asegura que exista el archivo de texto con los bundles
+[[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
+
+# Lazy-load Antidote desde su carpeta de funciones
+fpath=($(brew --prefix)/share/antidote/functions $fpath)
+autoload -Uz antidote
+
+# Genera el archivo .zsh estático si hay cambios
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  antidote bundle <${zsh_plugins}.txt >|${zsh_plugins}.zsh
+fi
+
+# Carga los plugins desde el archivo generado
+source ${zsh_plugins}.zsh
+
+# Inicializa Starship (prompt moderno)
+eval "$(starship init zsh)"
+
+# Configuración del editor por defecto
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+
+# Opcional: historial compartido entre sesiones
+setopt inc_append_history
+setopt share_history
+setopt hist_ignore_dups
+
+# Autocompletado
+autoload -Uz compinit
+compinit
+
+# Aliases útiles
+alias ls='eza --icons'
+alias grep='rg'
+alias cat='bat'
+

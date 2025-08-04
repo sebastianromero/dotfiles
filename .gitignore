@@ -1,0 +1,59 @@
+# Archivos temporales de chezmoi
+*.tmp
+*.bak
+*.swp
+*.swo
+*.swn
+*.un~*
+*~
+
+# Archivos de control de chezmoi
+.private_*
+.secret_*
+*.age
+
+# Cachés y runtime de Neovim
+.config/nvim/.netrwhist
+.config/nvim/undo/
+.config/nvim/swap/
+.config/nvim/backup/
+.config/nvim/lazy-lock.json
+.config/nvim/.lazy/
+
+# LazyVim local-only state
+.config/nvim/state.json
+.config/nvim/state/
+.config/nvim/lazy-lock.json
+.local/share/nvim/
+.local/state/nvim/
+.cache/nvim/
+
+# Config de WezTerm que no querés sincronizar
+.wezterm.log
+.wezterm*bak
+
+# Sesiones de terminal o shells
+.zsh_history
+.bash_history
+.fish_history
+
+# SSH y claves
+.ssh/
+.gnupg/
+
+# Credenciales de herramientas
+.netrc
+.aws/
+.gcloud/
+.terraform/
+.gh/
+.git-credentials
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos generados por editores
+*.code-workspace
+*.vscode/
+.idea/

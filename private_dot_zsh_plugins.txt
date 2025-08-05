@@ -1,0 +1,29 @@
+# Autosuggestions (sugerencias al escribir)
+zsh-users/zsh-autosuggestions
+
+# Syntax highlighting (colorea comandos)
+zsh-users/zsh-syntax-highlighting
+
+# Completado avanzado
+zsh-users/zsh-completions
+
+# Plugin para extraer archivos fácilmente
+ohmyzsh/ohmyzsh path:plugins/extract
+
+# Plugin útil para colorear y mostrar estado del directorio git
+djui/alias-tips
+
+# Plugin de navegación entre carpetas recientes
+rupa/z
+
+# Plugin para cambiar de directorio con fzf
+Aloxaf/fzf-tab
+
+# Plugin que mejora la búsqueda reversa (Ctrl+R) con fzf
+agkozak/zsh-z
+
+
+# Historial inteligente
+zdharma-continuum/history-search-multi-word
+
+junegunn/fzf

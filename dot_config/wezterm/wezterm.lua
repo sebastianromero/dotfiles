@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 -- Detectar el modo claro/oscuro
 local function scheme_for_appearance(appearance)
     if appearance:find("Dark") then
-        return "Gruvbox Dark" -- Asegúrate que este existe en tu instalación
+        return "Gruvbox dark, hard (base16)"
     else
         return "Gruvbox light, hard (base16)"
     end

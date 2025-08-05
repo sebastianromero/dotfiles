@@ -25,5 +25,3 @@ agkozak/zsh-z
 
 # Historial inteligente
 zdharma-continuum/history-search-multi-word
-
-junegunn/fzf

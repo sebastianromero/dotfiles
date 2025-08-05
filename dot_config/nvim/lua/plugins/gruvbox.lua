@@ -1,25 +1,24 @@
-return {{
+-- plugins/gruvbox.lua
+local function is_dark_mode()
+    local handle = io.popen(
+        "osascript -e 'tell application \"System Events\" to tell appearance preferences to get dark mode'")
+    local result = handle and handle:read("*a") or ""
+    if handle then
+        handle:close()
+    end
+    return result:match("true") ~= nil
+end
+
+local function set_theme()
+    vim.o.background = is_dark_mode() and "dark" or "light"
+    vim.cmd.colorscheme("gruvbox")
+end
+
+return {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function()
-        vim.o.background = "light"
-        require("gruvbox").setup({
-            terminal_colors = true,
-            undercurl = true,
-            underline = true,
-            bold = true,
-            italic = {
-                strings = true,
-                comments = true,
-                operators = false,
-                folds = true
-            },
-            contrast = "hard", -- puede ser: "hard", "soft", ""
-            palette_overrides = {},
-            overrides = {},
-            dim_inactive = false,
-            transparent_mode = false
-        })
-        vim.cmd("colorscheme gruvbox")
+        set_theme()
+        vim.api.nvim_create_user_command("SetThemeAuto", set_theme, {})
     end
-}}
+}

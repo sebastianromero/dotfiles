@@ -1,12 +1,21 @@
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
-return {
+-- Detectar el modo claro/oscuro
+local function scheme_for_appearance(appearance)
+    if appearance:find("Dark") then
+        return "Gruvbox Dark" -- Asegúrate que este existe en tu instalación
+    else
+        return "Gruvbox light, hard (base16)"
+    end
+end
+
+local config = {
     automatically_reload_config = true,
     font = wezterm.font("MonaspiceNe Nerd Font Mono", {
         weight = "Medium"
     }),
     font_size = 15,
-    color_scheme = "Gruvbox light, hard (base16)",
+    color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
     use_fancy_tab_bar = true,
     enable_tab_bar = true,
     hide_tab_bar_if_only_one_tab = true,
@@ -28,14 +37,7 @@ return {
         key = 'l',
         mods = 'ALT',
         action = wezterm.action.ShowLauncher
-    }},
-    visual_bell = {
-        fade_in_function = 'EaseIn',
-        fade_in_duration_ms = 150,
-        fade_out_function = 'EaseOut',
-        fade_out_duration_ms = 150
-    },
-    colors = {
-        visual_bell = '#202020'
-    }
+    }}
 }
+
+return config

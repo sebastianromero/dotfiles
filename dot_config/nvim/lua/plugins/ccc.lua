@@ -1,5 +1,6 @@
 return {
-  "uga-rosa/ccc.nvim",
-  event = "VeryLazy",
-opts = {},
+	"uga-rosa/ccc.nvim",
+	event = "VeryLazy",
+	opts = {},
 }
+

@@ -78,22 +78,13 @@ if ! command -v wezterm >/dev/null; then
   if [[ "$INSTALL" == "brew install" ]]; then
     brew install --cask wezterm
   else
-    WEZ_URL=$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest \
-      | grep "browser_download_url.*\.AppImage" | cut -d '"' -f 4)
+    WEZ_URL=$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest |
+      grep "browser_download_url.*\.AppImage" | cut -d '"' -f 4)
     curl -LO "$WEZ_URL"
     chmod +x wezterm-*.AppImage
     sudo mv wezterm-*.AppImage /usr/local/bin/wezterm
   fi
 fi
 
-# Monaspace fonts
-MONASPACE_DIR="$HOME/.local/share/fonts/Monaspace"
-if [[ ! -d "$MONASPACE_DIR" ]]; then
-  info "Descargando fuentes Monaspace"
-  mkdir -p "$MONASPACE_DIR"
-  curl -L https://github.com/githubnext/monaspace/releases/latest/download/Monaspace.zip -o /tmp/Monaspace.zip
-  unzip /tmp/Monaspace.zip -d "$MONASPACE_DIR"
-  fc-cache -fv "$MONASPACE_DIR"
-fi
-
 info "✅ Todo instalado correctamente"
+

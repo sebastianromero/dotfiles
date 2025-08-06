@@ -128,6 +128,8 @@ return {
 		opts = {
 			dashboard = {
 				enabled = true,
+				row = nil,
+				col = nil,
 				preset = {
 					header = [[
           _____          

@@ -1,10 +1,5 @@
 return {
-	{
-		import = "lazyvim.plugins.extras.util.startuptime",
-	},
-	{
-		import = "lazyvim.plugins.extras.coding.cmp",
-	},
+
 	{
 		import = "lazyvim.plugins.extras.coding.yanky",
 	},
@@ -15,37 +10,16 @@ return {
 		import = "lazyvim.plugins.extras.editor.refactoring",
 	},
 	{
-		import = "lazyvim.plugins.extras.editor.snacks-explorer",
+		import = "lazyvim.plugins.extras.editor.telescope",
 	},
 	{
-		import = "lazyvim.plugins.extras.formatting.prettier",
-	},
-	{
-		import = "lazyvim.plugins.extras.ui.mini-animate",
-	},
-	{
-		import = "lazyvim.plugins.extras.ui.smear-cursor",
-	},
-	{
-		import = "lazyvim.plugins.extras.ui.treesitter-context",
-	},
-	{
-		import = "lazyvim.plugins.extras.util.chezmoi",
-	},
-	{
-		import = "lazyvim.plugins.extras.util.gitui",
-	},
-	{
-		import = "lazyvim.plugins.extras.util.mini-hipatterns",
-	},
-	{
-		import = "lazyvim.plugins.extras.util.project",
-	},
-	{
-		import = "lazyvim.plugins.extras.util.startuptime",
+		import = "lazyvim.plugins.extras.formatting.biome",
 	},
 	{
 		import = "lazyvim.plugins.extras.lang.astro",
+	},
+	{
+		import = "lazyvim.plugins.extras.lang.git",
 	},
 	{
 		import = "lazyvim.plugins.extras.lang.json",
@@ -79,6 +53,35 @@ return {
 	},
 	{
 		import = "lazyvim.plugins.extras.lang.yaml",
+	},
+	{
+		import = "lazyvim.plugins.extras.ui.mini-animate",
+	},
+	{
+		import = "lazyvim.plugins.extras.ui.smear-cursor",
+	},
+	{
+		import = "lazyvim.plugins.extras.ui.treesitter-context",
+	},
+	{
+		import = "lazyvim.plugins.extras.util.gitui",
+	},
+	{
+		import = "lazyvim.plugins.extras.util.mini-hipatterns",
+	},
+	{ import = "lazyvim.plugins.extras.util.chezmoi" },
+	{
+		import = "lazyvim.plugins.extras.util.project",
+	},
+	{
+		import = "lazyvim.plugins.extras.util.startuptime",
+	},
+	{
+		import = "lazyvim.plugins",
+	},
+	{
+		"dstein64/vim-startuptime",
+		cmd = "StartupTime",
 	},
 	{
 		"uga-rosa/ccc.nvim",
@@ -119,14 +122,39 @@ return {
 		opts = {},
 	},
 	{
-		"sphamba/smear-cursor.nvim",
-		event = "VeryLazy",
+		"folke/snacks.nvim",
+		priority = 1000,
+		lazy = false,
 		opts = {
-			smear_between_buffers = true,
-			smear_between_neighbor_lines = true,
-			scroll_buffer_space = true,
-			legacy_computing_symbols_support = true,
-			smear_insert_mode = true,
+			dashboard = {
+				enabled = true,
+				preset = {
+					header = [[
+          _____          
+         /\    \         
+        /::\    \        
+       /::::\    \       
+      /::::::\    \      
+     /:::/\:::\    \     
+    /:::/__\:::\    \    
+    \:::\   \:::\    \   
+  ___\:::\   \:::\    \  
+ /\   \:::\   \:::\    \ 
+/::\   \:::\   \:::\____\
+\:::\   \:::\   \::/    /
+ \:::\   \:::\   \/____/ 
+  \:::\   \:::\    \     
+   \:::\   \:::\____\    
+    \:::\  /:::/    /    
+     \:::\/:::/    /     
+      \::::::/    /      
+       \::::/    /       
+        \::/    /        
+         \/____/         
+                         
+]],
+				},
+			},
 		},
 	},
 }

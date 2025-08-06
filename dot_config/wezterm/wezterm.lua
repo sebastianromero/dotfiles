@@ -14,7 +14,7 @@ local config = {
 	font = wezterm.font("MonaspiceNe Nerd Font Mono", {
 		weight = "Medium",
 	}),
-	font_size = 15,
+	font_size = 13,
 	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
 	use_fancy_tab_bar = true,
 	enable_tab_bar = true,
